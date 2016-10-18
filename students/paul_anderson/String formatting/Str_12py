@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+
+strs=(1,2,3)
+print (strs[::])
+
+#x[0] = (str('{:03d}'.format(strs[0])))
+#x[1] = ('{:.5}'.format(strs[1]))
+#x[2] = ('{:.0e}'.format(strs[2]))
+
+print('The numbers are: {:d}, {:d}, {:d}'.format(1,2,3))

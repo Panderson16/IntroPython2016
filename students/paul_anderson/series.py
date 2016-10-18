@@ -1,6 +1,6 @@
 __author__ = 'panderson'
 
-n=1
+n=100
 
 
 def fibonacci(n):
@@ -41,10 +41,10 @@ def lucas(n):
 
 
 
-#fibonacci(n)
-print ('the lucas number for %s is:' % (n))
-print (lucas(n))
-print ('finished')	
+print (fibonacci(n))
+#print ('the lucas number for %s is:' % (n))
+#print (lucas(n))
+#print ('finished')	
 
 	
 		
