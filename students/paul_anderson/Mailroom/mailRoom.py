@@ -102,9 +102,7 @@ def print_letter(name, donation):
 def reports(donors):
 	print('{:8}{:>10}{:>10}'.format('Donor', 'Total', 'Average'))
 	for donor in donors:
-		# pop first element into name, convert the rest of the list to float
-		# do calulations based on the floats, sort etc
-		
+	
 		name = donor[0]
 		total=0
 		dlist = []
