@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-if __name__ == '__main__'
-
+#if __name__ == '__main__':
+from exception import safe_input
 
 def valid_donation(donation):
 	#try to convert to int
@@ -25,24 +25,30 @@ def build_donors():
 def list_donors(doners):
 	return_list=[]
 	for donor in donors:
+	    print(donor)
 		return_list.append(donor[0])
-	return return_list	
+	return return_list
 
-def choice():
+def main_menu():
 	response=''
 	while not response:
 		print('would you like to send Thank you letters or run a Report?')
-		print('Type "L" for thank you letters, "R" for reports or "Q" to quit')
-		choice= input (' -->')
-		if choice.upper()=='L':
-			return 'letter'
-		elif choice.upper()=='R':
-			return 'reports'
-		elif choice.upper()=='Q':
-			return 'quit'	
+		print("""What would you like to do:
+		          
+		Print a Report              [R]
+		Write a thank you letter    [L]
+		Quit                        [Q]""")
+		choice = safe_input()
+		if choice == 'L':
+		  return 'letter'
+		elif choice == 'R':
+		  return 'reports'
+		elif choice == 'Q':
+		  return 'quit'	
 		else:
-			print('Invalid selection, please try again.')
+		  print('Invalid selection, please try again.')
 
+		    
 def thank_you(donors):
 	#print('Thank you')
 	response = ''
@@ -83,7 +89,7 @@ def existing_donor(name, donors):
 
 def new_donor(donors, name):
 	while True:
-		print('How much did we milk {} for this time?'.format(name))
+		print('How much did we milk {} for?'.format(name))
 		donation = input('-->')
 		if valid_donation(donation):
 			donation=float(donation)
@@ -123,7 +129,7 @@ def quit_now():
 
 donors=build_donors()
 while True:		
-	response=choice()	
+	response=main_menu()	
 
 	if response=='letter':
 		donors = thank_you(donors)
@@ -131,5 +137,5 @@ while True:
 	elif response=='reports':
 		#print(donors)
 		reports(donors)
-	else: 
+	elif response == 'quit': 
 		quit()

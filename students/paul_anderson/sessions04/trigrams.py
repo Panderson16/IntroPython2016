@@ -67,7 +67,7 @@ dword={}
 next_word ={}
 word_count={}
 open_txt('test.txt')
-#print (dword)
+print (dword)
 #print ('dword sherlock is: {}'.format(dword['sherlock']))
 print (word_count)
 
